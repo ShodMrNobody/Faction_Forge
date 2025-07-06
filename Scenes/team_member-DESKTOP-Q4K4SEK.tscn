@@ -1,0 +1,530 @@
+[gd_scene load_steps=16 format=3 uid="uid://joah3tfqkle7"]
+
+[ext_resource type="StyleBox" uid="uid://dqwm6u2ammwn5" path="res://Styles/HPbar.tres" id="1_b8133"]
+[ext_resource type="StyleBox" uid="uid://d4dl6ccgn2cn" path="res://Styles/MPbar.tres" id="2_bbhyx"]
+[ext_resource type="StyleBox" uid="uid://c1ko2bf53oxoa" path="res://Styles/label_bg.tres" id="2_phg7f"]
+[ext_resource type="StyleBox" uid="uid://6wd75487eo1c" path="res://Styles/CharacterBG.tres" id="3_cale2"]
+[ext_resource type="Texture2D" uid="uid://cfxn10sxp5fsv" path="res://Images/icon.svg" id="4_kuh5d"]
+[ext_resource type="Script" path="res://Scripts/team_1_member.gd" id="6_qmqqp"]
+[ext_resource type="StyleBox" uid="uid://dbiergwb3di36" path="res://Styles/idle.tres" id="7_cu40t"]
+[ext_resource type="Script" path="res://Scripts/battle_member.gd" id="7_d2e2v"]
+[ext_resource type="StyleBox" uid="uid://cf454u15hdocy" path="res://Styles/stamina_bar.tres" id="7_mt0pw"]
+[ext_resource type="Texture2D" uid="uid://cl04afnpbm4l0" path="res://Images/race/test_image.png" id="7_r5v7k"]
+[ext_resource type="StyleBox" uid="uid://cnqmd60bqfhp8" path="res://Styles/turn_order_BG.tres" id="8_o2s7y"]
+[ext_resource type="Texture2D" uid="uid://d4j4dvc87m44y" path="res://Images/buttons/gray_button.png" id="9_537yn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cbcaf"]
+bg_color = Color(0.0392157, 0.211765, 0.466667, 1)
+border_width_top = 5
+border_width_right = 10
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqcb2"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="ImageTexture" id="ImageTexture_ynd11"]
+
+[node name="team_member" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 135.0
+offset_top = 106.0
+offset_right = 135.0
+offset_bottom = 106.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 696.0
+offset_bottom = 266.0
+
+[node name="team_2_member" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="HP" type="ProgressBar" parent="HBoxContainer/team_2_member"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("1_b8133")
+value = 20.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="HBoxContainer/team_2_member/HP"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "sd"
+
+[node name="MP" type="ProgressBar" parent="HBoxContainer/team_2_member"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("2_bbhyx")
+value = 80.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="HBoxContainer/team_2_member/MP"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="CenterContainer" type="PanelContainer" parent="HBoxContainer/team_2_member"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_cale2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/team_2_member/CenterContainer"]
+layout_mode = 2
+
+[node name="Name" type="HBoxContainer" parent="HBoxContainer/team_2_member/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/team_2_member/CenterContainer/VBoxContainer/Name"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/normal = ExtResource("2_phg7f")
+text = "Name:"
+
+[node name="r_name" type="Label" parent="HBoxContainer/team_2_member/CenterContainer/VBoxContainer/Name"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/normal = ExtResource("2_phg7f")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/team_2_member/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 98)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("4_kuh5d")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Turn_order" type="VBoxContainer" parent="HBoxContainer/team_2_member/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="Second Turn" type="Label" parent="HBoxContainer/team_2_member/CenterContainer/VBoxContainer/Turn_order"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_styles/normal = ExtResource("2_phg7f")
+text = "00"
+
+[node name="Turn" type="HBoxContainer" parent="HBoxContainer/team_2_member/CenterContainer/VBoxContainer/Turn_order"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/team_2_member/CenterContainer/VBoxContainer/Turn_order/Turn"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_styles/normal = ExtResource("2_phg7f")
+text = "Turn:"
+
+[node name="Label2" type="Label" parent="HBoxContainer/team_2_member/CenterContainer/VBoxContainer/Turn_order/Turn"]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("2_phg7f")
+text = "00"
+
+[node name="Skills" type="OptionButton" parent="HBoxContainer/team_2_member"]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "Attack"
+popup/item_1/text = "Shield"
+popup/item_1/id = 1
+popup/item_2/text = "Skill Attack"
+popup/item_2/id = 2
+popup/item_3/text = "Magic Attack"
+popup/item_3/id = 3
+
+[node name="Targets" type="OptionButton" parent="HBoxContainer/team_2_member"]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "Attack"
+popup/item_1/text = "Shield"
+popup/item_1/id = 1
+popup/item_2/text = "Skill Attack"
+popup/item_2/id = 2
+popup/item_3/text = "Magic Attack"
+popup/item_3/id = 3
+
+[node name="team_1_member" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+script = ExtResource("6_qmqqp")
+
+[node name="Targets" type="OptionButton" parent="HBoxContainer/team_1_member"]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "Attack"
+popup/item_1/text = "Shield"
+popup/item_1/id = 1
+popup/item_2/text = "Skill Attack"
+popup/item_2/id = 2
+popup/item_3/text = "Magic Attack"
+popup/item_3/id = 3
+
+[node name="Skills" type="OptionButton" parent="HBoxContainer/team_1_member"]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "Attack"
+popup/item_1/text = "Shield"
+popup/item_1/id = 1
+popup/item_2/text = "Skill Attack"
+popup/item_2/id = 2
+popup/item_3/text = "Magic Attack"
+popup/item_3/id = 3
+
+[node name="CenterContainer" type="PanelContainer" parent="HBoxContainer/team_1_member"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_cale2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/team_1_member/CenterContainer"]
+layout_mode = 2
+
+[node name="Turn_order" type="VBoxContainer" parent="HBoxContainer/team_1_member/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="Turn" type="HBoxContainer" parent="HBoxContainer/team_1_member/CenterContainer/VBoxContainer/Turn_order"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/team_1_member/CenterContainer/VBoxContainer/Turn_order/Turn"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_styles/normal = ExtResource("2_phg7f")
+text = "Turn:"
+
+[node name="Label2" type="Label" parent="HBoxContainer/team_1_member/CenterContainer/VBoxContainer/Turn_order/Turn"]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("2_phg7f")
+text = "00"
+
+[node name="Second Turn" type="Label" parent="HBoxContainer/team_1_member/CenterContainer/VBoxContainer/Turn_order"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_styles/normal = ExtResource("2_phg7f")
+text = "00"
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/team_1_member/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 98)
+layout_mode = 2
+texture = ExtResource("4_kuh5d")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="HBoxContainer" parent="HBoxContainer/team_1_member/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Label" type="Label" parent="HBoxContainer/team_1_member/CenterContainer/VBoxContainer/Name"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/normal = ExtResource("2_phg7f")
+text = "Name:"
+
+[node name="r_name" type="Label" parent="HBoxContainer/team_1_member/CenterContainer/VBoxContainer/Name"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/normal = ExtResource("2_phg7f")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MP" type="ProgressBar" parent="HBoxContainer/team_1_member"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("2_bbhyx")
+value = 80.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="HBoxContainer/team_1_member/MP"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="HP" type="ProgressBar" parent="HBoxContainer/team_1_member"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("1_b8133")
+value = 20.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="HBoxContainer/team_1_member/HP"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="member_updated" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(176, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_styles/panel = ExtResource("7_cu40t")
+script = ExtResource("7_d2e2v")
+
+[node name="char_image" type="TextureRect" parent="HBoxContainer/member_updated"]
+show_behind_parent = true
+layout_mode = 2
+offset_right = 176.0
+offset_bottom = 266.0
+texture = ExtResource("7_r5v7k")
+expand_mode = 1
+
+[node name="name_image" type="TextureRect" parent="HBoxContainer/member_updated"]
+show_behind_parent = true
+layout_mode = 2
+offset_left = 7.0
+offset_top = -11.0
+offset_right = 170.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+texture = ExtResource("9_537yn")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/member_updated"]
+show_behind_parent = true
+layout_mode = 2
+offset_right = 176.0
+offset_bottom = 266.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/member_updated/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="turn_order" type="Panel" parent="HBoxContainer/member_updated/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(25, 30)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("8_o2s7y")
+
+[node name="Label" type="Label" parent="HBoxContainer/member_updated/VBoxContainer/HBoxContainer/turn_order"]
+layout_mode = 2
+offset_right = 25.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="name" type="Label" parent="HBoxContainer/member_updated/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Homie "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="unit_rank" type="Panel" parent="HBoxContainer/member_updated/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(25, 30)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cbcaf")
+
+[node name="Label" type="Label" parent="HBoxContainer/member_updated/VBoxContainer/HBoxContainer/unit_rank"]
+layout_mode = 2
+offset_right = 25.0
+offset_bottom = 30.0
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="center" type="HBoxContainer" parent="HBoxContainer/member_updated/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="health" type="ProgressBar" parent="HBoxContainer/member_updated/VBoxContainer/center"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_styles/fill = ExtResource("1_b8133")
+value = 100.0
+fill_mode = 3
+show_percentage = false
+
+[node name="Label" type="Label" parent="HBoxContainer/member_updated/VBoxContainer/center/health"]
+layout_mode = 0
+offset_right = 25.0
+offset_bottom = 198.0
+theme_override_font_sizes/font_size = 12
+text = "9
+9
+9
+9
+/
+9
+9
+9
+9"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/member_updated/VBoxContainer/center"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="HBoxContainer/member_updated/VBoxContainer/center/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_bqcb2")
+
+[node name="OptionButton" type="OptionButton" parent="HBoxContainer/member_updated/VBoxContainer/center/VBoxContainer"]
+layout_mode = 2
+clip_text = true
+item_count = 1
+
+[node name="OptionButton2" type="OptionButton" parent="HBoxContainer/member_updated/VBoxContainer/center/VBoxContainer"]
+layout_mode = 2
+clip_text = true
+allow_reselect = true
+item_count = 1
+popup/item_0/icon = SubResource("ImageTexture_ynd11")
+popup/item_0/separator = true
+
+[node name="resource" type="ProgressBar" parent="HBoxContainer/member_updated/VBoxContainer/center"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_styles/fill = ExtResource("7_mt0pw")
+value = 100.0
+fill_mode = 3
+show_percentage = false
+
+[node name="Label" type="Label" parent="HBoxContainer/member_updated/VBoxContainer/center/resource"]
+layout_mode = 0
+offset_right = 25.0
+offset_bottom = 198.0
+theme_override_font_sizes/font_size = 13
+text = "9
+9
+9
+9
+/
+9
+9
+9
+9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/member_updated/VBoxContainer"]
+layout_mode = 2
+
+[node name="stats" type="Button" parent="HBoxContainer/member_updated/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "stats"
+
+[node name="effects" type="Button" parent="HBoxContainer/member_updated/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "effects"
+
+[node name="stats_panel" type="Panel" parent="HBoxContainer/member_updated"]
+visible = false
+layout_mode = 0
+offset_left = 25.0
+offset_top = 27.0
+offset_right = 151.0
+offset_bottom = 168.0
+
+[node name="stats" type="GridContainer" parent="HBoxContainer/member_updated/stats_panel"]
+layout_mode = 2
+offset_right = 126.0
+offset_bottom = 141.0
+size_flags_vertical = 3
+columns = 2
+
+[node name="str" type="Label" parent="HBoxContainer/member_updated/stats_panel/stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "STR:10
+"
+
+[node name="dex" type="Label" parent="HBoxContainer/member_updated/stats_panel/stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "DEX: 10"
+
+[node name="int" type="Label" parent="HBoxContainer/member_updated/stats_panel/stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Int: 10"
+
+[node name="ctr" type="Label" parent="HBoxContainer/member_updated/stats_panel/stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "CTR:10"
+
+[node name="spd" type="Label" parent="HBoxContainer/member_updated/stats_panel/stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "spd: 10"
+
+[node name="crd" type="Label" parent="HBoxContainer/member_updated/stats_panel/stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "CRD: 10"
+
+[node name="effects_panel" type="Panel" parent="HBoxContainer/member_updated"]
+visible = false
+offset_left = 25.0
+offset_top = 27.0
+offset_right = 151.0
+offset_bottom = 168.0
+
+[node name="VScrollBar" type="ScrollContainer" parent="HBoxContainer/member_updated/effects_panel"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 125.0
+offset_bottom = 140.0
+horizontal_scroll_mode = 0
+
+[node name="effects" type="GridContainer" parent="HBoxContainer/member_updated/effects_panel/VScrollBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 3
+
+[node name="dmg_panel" type="Panel" parent="HBoxContainer/member_updated"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 25.0
+offset_top = 27.0
+offset_right = 151.0
+offset_bottom = 168.0
+
+[node name="dmg" type="GridContainer" parent="HBoxContainer/member_updated/dmg_panel"]
+layout_mode = 2
+offset_right = 126.0
+offset_bottom = 141.0
+size_flags_vertical = 3
+columns = 2
+
+[connection signal="pressed" from="HBoxContainer/member_updated/VBoxContainer/HBoxContainer2/stats" to="HBoxContainer/member_updated" method="_on_stats_pressed"]
+[connection signal="pressed" from="HBoxContainer/member_updated/VBoxContainer/HBoxContainer2/effects" to="HBoxContainer/member_updated" method="_on_effects_pressed"]

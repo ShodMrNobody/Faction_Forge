@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://bw83xp3gyqesd"]
+
+[ext_resource type="Texture2D" uid="uid://clbjki72rbk0q" path="res://Images/buttons/purple_button.png" id="1_14ank"]
+
+[resource]
+texture = ExtResource("1_14ank")
+expand_margin_left = 35.0
+expand_margin_top = 24.0
+expand_margin_right = 35.0
+expand_margin_bottom = 22.0

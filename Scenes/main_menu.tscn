@@ -1,0 +1,248 @@
+[gd_scene load_steps=14 format=3 uid="uid://sa6ad20lfosp"]
+
+[ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_3hdcg"]
+[ext_resource type="Texture2D" uid="uid://dthvruc78ltif" path="res://Images/buttons/red_button.png" id="2_0cto0"]
+[ext_resource type="StyleBox" uid="uid://d0w5kejvtklbp" path="res://Styles/buttonBG.tres" id="2_lbx0u"]
+[ext_resource type="StyleBox" uid="uid://bw83xp3gyqesd" path="res://Styles/purpleBG.tres" id="3_h2u4r"]
+[ext_resource type="Texture2D" uid="uid://d4j4dvc87m44y" path="res://Images/buttons/gray_button.png" id="3_hsdlt"]
+[ext_resource type="StyleBox" uid="uid://b107becaskwy1" path="res://Styles/GreenBG.tres" id="4_st7mj"]
+[ext_resource type="StyleBox" uid="uid://dx1vp5j7sncki" path="res://Styles/blueBG.tres" id="5_xaa27"]
+[ext_resource type="Texture2D" uid="uid://ddwgpbvh3uptr" path="res://Images/buttons/orange_button.png" id="8_a2g64"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtero"]
+bg_color = Color(0.109804, 0.109804, 0.109804, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eubu2"]
+texture = ExtResource("2_0cto0")
+expand_margin_left = 35.0
+expand_margin_top = 25.0
+expand_margin_right = 35.0
+expand_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3yo0q"]
+texture = ExtResource("3_hsdlt")
+expand_margin_left = 17.0
+expand_margin_top = 25.0
+expand_margin_right = 17.0
+expand_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ycc0"]
+texture = ExtResource("8_a2g64")
+expand_margin_left = 35.0
+expand_margin_top = 25.0
+expand_margin_right = 35.0
+expand_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_020fs"]
+bg_color = Color(0, 0, 0, 0.627451)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 2.0
+offset_right = 1150.0
+offset_bottom = 648.0
+script = ExtResource("1_3hdcg")
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0.709804)
+layout_mode = 2
+offset_left = 61.0
+offset_top = -41.0
+offset_right = 295.0
+offset_bottom = 691.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xtero")
+
+[node name="Menu" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 61.0
+offset_top = -2.0
+offset_right = 296.0
+offset_bottom = 646.0
+
+[node name="Spacer7" type="TextureRect" parent="Menu"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Play" type="Button" parent="Menu/HBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_eubu2")
+text = "Fight!"
+
+[node name="Skirmish" type="Button" parent="Menu/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_3yo0q")
+text = "Skirmish"
+
+[node name="War" type="Button" parent="Menu/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_3yo0q")
+text = "War"
+
+[node name="TextureRect" type="TextureRect" parent="Menu/HBoxContainer"]
+layout_mode = 2
+
+[node name="Spacer" type="TextureRect" parent="Menu"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DutyRoster" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("2_lbx0u")
+text = "Duty Roster"
+expand_icon = true
+
+[node name="Spacer2" type="TextureRect" parent="Menu"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="History" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("3_h2u4r")
+text = "History"
+
+[node name="Spacer3" type="TextureRect" parent="Menu"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MedicalTent" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_st7mj")
+text = "Medical Tent"
+
+[node name="Spacer4" type="TextureRect" parent="Menu"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="New Recruit" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("5_xaa27")
+text = "New Recruit
+"
+
+[node name="Spacer5" type="TextureRect" parent="Menu"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Faction Forge" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_5ycc0")
+text = "Faction Forge
+"
+
+[node name="Spacer6" type="TextureRect" parent="Menu"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Menu"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+offset_left = 303.0
+offset_top = 44.0
+offset_right = 1147.0
+offset_bottom = 313.0
+
+[node name="team_options" type="TabContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_020fs")
+current_tab = 2
+
+[node name="team_1_op" type="VBoxContainer" parent="ScrollContainer/team_options"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="team_2_op" type="VBoxContainer" parent="ScrollContainer/team_options"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Fight!" type="BoxContainer" parent="ScrollContainer/team_options"]
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="team_1" type="VBoxContainer" parent="ScrollContainer/team_options/Fight!"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="team" type="Label" parent="ScrollContainer/team_options/Fight!/team_1"]
+layout_mode = 2
+text = "Team 1:"
+
+[node name="mem1" type="Label" parent="ScrollContainer/team_options/Fight!/team_1"]
+layout_mode = 2
+
+[node name="mem2" type="Label" parent="ScrollContainer/team_options/Fight!/team_1"]
+layout_mode = 2
+
+[node name="mem3" type="Label" parent="ScrollContainer/team_options/Fight!/team_1"]
+layout_mode = 2
+
+[node name="mem4" type="Label" parent="ScrollContainer/team_options/Fight!/team_1"]
+layout_mode = 2
+
+[node name="mem5" type="Label" parent="ScrollContainer/team_options/Fight!/team_1"]
+layout_mode = 2
+
+[node name="mem6" type="Label" parent="ScrollContainer/team_options/Fight!/team_1"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="ScrollContainer/team_options/Fight!"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "Fight!"
+
+[node name="team_2" type="VBoxContainer" parent="ScrollContainer/team_options/Fight!"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="team" type="Label" parent="ScrollContainer/team_options/Fight!/team_2"]
+layout_mode = 2
+text = "Team 2:"
+
+[node name="mem1" type="Label" parent="ScrollContainer/team_options/Fight!/team_2"]
+layout_mode = 2
+
+[node name="mem2" type="Label" parent="ScrollContainer/team_options/Fight!/team_2"]
+layout_mode = 2
+
+[node name="mem3" type="Label" parent="ScrollContainer/team_options/Fight!/team_2"]
+layout_mode = 2
+
+[node name="mem4" type="Label" parent="ScrollContainer/team_options/Fight!/team_2"]
+layout_mode = 2
+
+[node name="mem5" type="Label" parent="ScrollContainer/team_options/Fight!/team_2"]
+layout_mode = 2
+
+[node name="mem6" type="Label" parent="ScrollContainer/team_options/Fight!/team_2"]
+layout_mode = 2
+
+[connection signal="pressed" from="Menu/HBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Menu/HBoxContainer/Skirmish" to="." method="_on_skirmish_pressed"]
+[connection signal="pressed" from="Menu/HBoxContainer/War" to="." method="_on_war_pressed"]
+[connection signal="pressed" from="Menu/DutyRoster" to="." method="_on_duty_roster_pressed"]
+[connection signal="pressed" from="Menu/History" to="." method="_on_history_pressed"]
+[connection signal="pressed" from="Menu/MedicalTent" to="." method="_on_medical_tent_pressed"]
+[connection signal="pressed" from="Menu/New Recruit" to="." method="_on_new_recruit_pressed"]
+[connection signal="pressed" from="Menu/Faction Forge" to="." method="_on_faction_forge_pressed"]
+[connection signal="pressed" from="ScrollContainer/team_options/Fight!/Button" to="." method="_on_fight_pressed"]

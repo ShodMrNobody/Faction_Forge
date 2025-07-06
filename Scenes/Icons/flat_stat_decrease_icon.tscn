@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cj44old6vsaah"]
+
+[ext_resource type="Script" path="res://Scripts/icon_scripts/flat_stat_decrease.gd" id="1_8yh63"]
+[ext_resource type="Texture2D" uid="uid://6pt2271np7na" path="res://Images/indicators/Flat_Stat_Increase.png" id="2_1xpb2"]
+[ext_resource type="LabelSettings" uid="uid://ijokosxboogv" path="res://Styles/damage_font.tres" id="3_cfdx7"]
+
+[node name="flat_stat_decrease_icon" type="PanelContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(37, 43)
+offset_top = 75.0
+offset_right = 67.0
+offset_bottom = 145.0
+script = ExtResource("1_8yh63")
+
+[node name="ReferenceRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_1xpb2")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "10"
+label_settings = ExtResource("3_cfdx7")
+horizontal_alignment = 1
+vertical_alignment = 1

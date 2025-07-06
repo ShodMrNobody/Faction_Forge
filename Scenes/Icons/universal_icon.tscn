@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://di62xism056i4"]
+
+[ext_resource type="Script" path="res://Scripts/icon_scripts/universal_dmg.gd" id="1_2eyea"]
+[ext_resource type="Texture2D" uid="uid://4qgw1wr1p5vs" path="res://Images/indicators/uni_damage.png" id="2_vpliy"]
+[ext_resource type="LabelSettings" uid="uid://ijokosxboogv" path="res://Styles/damage_font.tres" id="3_8nxyh"]
+
+[node name="universal_icon" type="PanelContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(37, 43)
+offset_left = 233.0
+offset_top = 4.0
+offset_right = 300.0
+offset_bottom = 74.0
+script = ExtResource("1_2eyea")
+
+[node name="ReferenceRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_vpliy")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "9999"
+label_settings = ExtResource("3_8nxyh")
+horizontal_alignment = 1
+vertical_alignment = 1

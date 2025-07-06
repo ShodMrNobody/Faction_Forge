@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpe25d8nx1hyv"]
+
+[ext_resource type="Script" path="res://Scripts/icon_scripts/flat_stat_increase.gd" id="1_gc5r1"]
+[ext_resource type="Texture2D" uid="uid://6pt2271np7na" path="res://Images/indicators/Flat_Stat_Increase.png" id="2_iba83"]
+[ext_resource type="LabelSettings" uid="uid://ctiqcn38ex5vg" path="res://Styles/heal_font.tres" id="3_a4l2g"]
+
+[node name="flat_stat_increase_icon" type="PanelContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(37, 43)
+offset_right = 67.0
+offset_bottom = 70.0
+script = ExtResource("1_gc5r1")
+
+[node name="ReferenceRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_iba83")
+
+[node name="stacks" type="Label" parent="."]
+layout_mode = 2
+text = "10"
+label_settings = ExtResource("3_a4l2g")
+horizontal_alignment = 1
+vertical_alignment = 1

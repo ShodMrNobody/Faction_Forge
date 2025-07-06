@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1svhson2eht7"]
+
+[ext_resource type="Script" path="res://Scripts/transition.gd" id="1_4t510"]
+[ext_resource type="Texture2D" uid="uid://dehi753daqlt6" path="res://Images/backgrounds/BG_MM.png" id="2_8vdud"]
+[ext_resource type="StyleBox" uid="uid://pdqmxe1rd7ud" path="res://Styles/border.tres" id="3_r7qom"]
+
+[node name="Transition" type="CanvasLayer"]
+script = ExtResource("1_4t510")
+transition_duration = 0.5
+
+[node name="Panel" type="TextureRect" parent="."]
+offset_left = -1229.0
+offset_top = -381.0
+offset_right = 2250.0
+offset_bottom = 1200.0
+texture = ExtResource("2_8vdud")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+layout_mode = 0
+offset_left = 1229.0
+offset_top = 381.0
+offset_right = 2381.0
+offset_bottom = 1029.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="PanelContainer" type="Panel" parent="Panel"]
+top_level = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.354
+anchor_top = 0.241
+anchor_right = 0.354
+anchor_bottom = 0.241
+offset_left = -407.808
+offset_top = -156.168
+offset_right = 744.192
+offset_bottom = 491.832
+theme_override_styles/panel = ExtResource("3_r7qom")

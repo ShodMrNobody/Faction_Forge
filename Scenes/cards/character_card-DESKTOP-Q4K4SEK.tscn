@@ -1,0 +1,846 @@
+[gd_scene load_steps=11 format=3 uid="uid://f70sldf1sqdy"]
+
+[ext_resource type="StyleBox" uid="uid://pdqmxe1rd7ud" path="res://Styles/border.tres" id="1_is4nb"]
+[ext_resource type="StyleBox" uid="uid://cf454u15hdocy" path="res://Styles/stamina_bar.tres" id="2_wfdsl"]
+[ext_resource type="StyleBox" uid="uid://dqwm6u2ammwn5" path="res://Styles/HPbar.tres" id="3_331nv"]
+[ext_resource type="StyleBox" uid="uid://d4dl6ccgn2cn" path="res://Styles/MPbar.tres" id="4_i8lf6"]
+[ext_resource type="Script" path="res://Scripts/option_2.gd" id="5_54bvm"]
+[ext_resource type="Script" path="res://Scripts/option_3.gd" id="6_d4hvu"]
+[ext_resource type="Texture2D" uid="uid://c5uolxmquvyy2" path="res://Images/backgrounds/ff_BG.png" id="6_seauy"]
+[ext_resource type="Texture2D" uid="uid://cl04afnpbm4l0" path="res://Images/race/test_image.png" id="7_be208"]
+[ext_resource type="Texture2D" uid="uid://d4j4dvc87m44y" path="res://Images/buttons/gray_button.png" id="8_upqyj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2xlc3"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Character_Card" type="Control"]
+layout_mode = 3
+anchor_right = 0.317
+anchor_bottom = 1.0
+offset_right = -0.18399
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Option_1" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 365.0
+offset_bottom = 648.0
+theme_override_styles/panel = ExtResource("1_is4nb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Option_1"]
+layout_mode = 0
+offset_right = 365.0
+offset_bottom = 648.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Option_1/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Option_1/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "Name:"
+
+[node name="name_in" type="Label" parent="Option_1/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("1_is4nb")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Option_1/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Option_1/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "Race:"
+
+[node name="race_name" type="Label" parent="Option_1/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("1_is4nb")
+
+[node name="Label2" type="Label" parent="Option_1/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "Class:"
+
+[node name="race_name2" type="Label" parent="Option_1/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("1_is4nb")
+
+[node name="race_img" type="Panel" parent="Option_1/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("1_is4nb")
+
+[node name="class_img" type="Panel" parent="Option_1/VBoxContainer/race_img"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("1_is4nb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Option_1/VBoxContainer/race_img/class_img"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+offset_left = 245.0
+offset_top = 4.0
+offset_right = 365.0
+offset_bottom = 288.0
+size_flags_horizontal = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Option_1/VBoxContainer/race_img/class_img/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="strg_L" type="Label" parent="Option_1/VBoxContainer/race_img/class_img/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "Strg"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="strg_in" type="Label" parent="Option_1/VBoxContainer/race_img/class_img/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Option_1/VBoxContainer/race_img/class_img/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="dex_L" type="Label" parent="Option_1/VBoxContainer/race_img/class_img/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "Dex"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="dex_in" type="Label" parent="Option_1/VBoxContainer/race_img/class_img/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Option_1/VBoxContainer/race_img/class_img/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="intel_L" type="Label" parent="Option_1/VBoxContainer/race_img/class_img/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "Intel"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="intel_in" type="Label" parent="Option_1/VBoxContainer/race_img/class_img/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Option_1/VBoxContainer/race_img/class_img/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="con_L" type="Label" parent="Option_1/VBoxContainer/race_img/class_img/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "Con"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="con_in" type="Label" parent="Option_1/VBoxContainer/race_img/class_img/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Option_1/VBoxContainer/race_img/class_img/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="spd_L" type="Label" parent="Option_1/VBoxContainer/race_img/class_img/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "Spd"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="spd_in" type="Label" parent="Option_1/VBoxContainer/race_img/class_img/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="Option_1/VBoxContainer/race_img/class_img/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="coord_L" type="Label" parent="Option_1/VBoxContainer/race_img/class_img/VBoxContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "Coord"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="coord_in" type="Label" parent="Option_1/VBoxContainer/race_img/class_img/VBoxContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SKill_labels" type="HBoxContainer" parent="Option_1/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="skill_L1" type="Label" parent="Option_1/VBoxContainer/SKill_labels"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "SKill 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="skill_L2" type="Label" parent="Option_1/VBoxContainer/SKill_labels"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "SKill 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="skill_L3" type="Label" parent="Option_1/VBoxContainer/SKill_labels"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "SKill 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="skill_L4" type="Label" parent="Option_1/VBoxContainer/SKill_labels"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "SKill 4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SKills_ins" type="HBoxContainer" parent="Option_1/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="skill_in1" type="Label" parent="Option_1/VBoxContainer/SKills_ins"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("1_is4nb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="skill_in2" type="Label" parent="Option_1/VBoxContainer/SKills_ins"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("1_is4nb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="skill_in3" type="Label" parent="Option_1/VBoxContainer/SKills_ins"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("1_is4nb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="skill_in4" type="Label" parent="Option_1/VBoxContainer/SKills_ins"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("1_is4nb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="passive" type="HBoxContainer" parent="Option_1/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="passive_L" type="Label" parent="Option_1/VBoxContainer/passive"]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "Passive:"
+
+[node name="passive_in" type="Label" parent="Option_1/VBoxContainer/passive"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("1_is4nb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bars" type="HBoxContainer" parent="Option_1/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="health" type="ProgressBar" parent="Option_1/VBoxContainer/bars"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/background = ExtResource("2_wfdsl")
+theme_override_styles/fill = ExtResource("3_331nv")
+max_value = 1000.0
+value = 500.0
+show_percentage = false
+
+[node name="health_L" type="Label" parent="Option_1/VBoxContainer/bars/health"]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 1.0
+offset_right = 112.0
+offset_bottom = 29.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="resc" type="ProgressBar" parent="Option_1/VBoxContainer/bars"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/background = ExtResource("2_wfdsl")
+theme_override_styles/fill = ExtResource("4_i8lf6")
+max_value = 10.0
+value = 5.0
+show_percentage = false
+
+[node name="resc_L" type="Label" parent="Option_1/VBoxContainer/bars/resc"]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 1.0
+offset_right = 112.0
+offset_bottom = 29.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="Option_1/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Option_1/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "Bio:"
+
+[node name="Option_2" type="Panel" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(365, 648)
+layout_mode = 0
+offset_left = 384.0
+offset_right = 749.0
+offset_bottom = 648.0
+script = ExtResource("5_54bvm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Option_2"]
+layout_mode = 0
+offset_right = 365.0
+offset_bottom = 648.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Option_2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Option_2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "Name:"
+
+[node name="name_in" type="Label" parent="Option_2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("1_is4nb")
+
+[node name="race_img" type="Panel" parent="Option_2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("1_is4nb")
+
+[node name="class_img" type="Panel" parent="Option_2/VBoxContainer/race_img"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("1_is4nb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Option_2/VBoxContainer/race_img/class_img"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+offset_left = 245.0
+offset_top = 4.0
+offset_right = 365.0
+offset_bottom = 324.0
+size_flags_horizontal = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Option_2/VBoxContainer/race_img/class_img/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="strg_L" type="Label" parent="Option_2/VBoxContainer/race_img/class_img/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "Strg"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="strg_in" type="Label" parent="Option_2/VBoxContainer/race_img/class_img/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Option_2/VBoxContainer/race_img/class_img/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="dex_L" type="Label" parent="Option_2/VBoxContainer/race_img/class_img/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "Dex"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="dex_in" type="Label" parent="Option_2/VBoxContainer/race_img/class_img/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Option_2/VBoxContainer/race_img/class_img/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="intel_L" type="Label" parent="Option_2/VBoxContainer/race_img/class_img/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "Intel"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="intel_in" type="Label" parent="Option_2/VBoxContainer/race_img/class_img/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Option_2/VBoxContainer/race_img/class_img/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="con_L" type="Label" parent="Option_2/VBoxContainer/race_img/class_img/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "Con"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="con_in" type="Label" parent="Option_2/VBoxContainer/race_img/class_img/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Option_2/VBoxContainer/race_img/class_img/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="spd_L" type="Label" parent="Option_2/VBoxContainer/race_img/class_img/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "Spd"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="spd_in" type="Label" parent="Option_2/VBoxContainer/race_img/class_img/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="Option_2/VBoxContainer/race_img/class_img/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="coord_L" type="Label" parent="Option_2/VBoxContainer/race_img/class_img/VBoxContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "Coord"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="coord_in" type="Label" parent="Option_2/VBoxContainer/race_img/class_img/VBoxContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SKill_labels" type="HBoxContainer" parent="Option_2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="skill_L1" type="Label" parent="Option_2/VBoxContainer/SKill_labels"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "SKill 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="skill_L2" type="Label" parent="Option_2/VBoxContainer/SKill_labels"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "SKill 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="skill_L3" type="Label" parent="Option_2/VBoxContainer/SKill_labels"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "SKill 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="skill_L4" type="Label" parent="Option_2/VBoxContainer/SKill_labels"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "SKill 4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SKills_ins" type="HBoxContainer" parent="Option_2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="skill_in1" type="Label" parent="Option_2/VBoxContainer/SKills_ins"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("1_is4nb")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="skill_in2" type="Label" parent="Option_2/VBoxContainer/SKills_ins"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("1_is4nb")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="skill_in3" type="Label" parent="Option_2/VBoxContainer/SKills_ins"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("1_is4nb")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="skill_in4" type="Label" parent="Option_2/VBoxContainer/SKills_ins"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("1_is4nb")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="bars" type="HBoxContainer" parent="Option_2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="health" type="ProgressBar" parent="Option_2/VBoxContainer/bars"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/background = ExtResource("2_wfdsl")
+theme_override_styles/fill = ExtResource("3_331nv")
+max_value = 1000.0
+value = 500.0
+show_percentage = false
+
+[node name="health_L" type="Label" parent="Option_2/VBoxContainer/bars/health"]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 1.0
+offset_right = 112.0
+offset_bottom = 29.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="resc" type="ProgressBar" parent="Option_2/VBoxContainer/bars"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/background = ExtResource("2_wfdsl")
+theme_override_styles/fill = ExtResource("4_i8lf6")
+max_value = 10.0
+value = 5.0
+show_percentage = false
+
+[node name="resc_L" type="Label" parent="Option_2/VBoxContainer/bars/resc"]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 1.0
+offset_right = 112.0
+offset_bottom = 29.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="Option_2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="bio" type="Label" parent="Option_2/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_styles/normal = ExtResource("1_is4nb")
+text = "Bio:"
+
+[node name="LineEdit" type="LineEdit" parent="Option_2/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Option_3" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 762.0
+offset_right = 1127.0
+offset_bottom = 648.0
+theme_override_styles/panel = ExtResource("1_is4nb")
+script = ExtResource("6_d4hvu")
+
+[node name="bottom_image" type="TextureRect" parent="Option_3"]
+layout_mode = 0
+offset_top = 352.0
+offset_right = 363.0
+offset_bottom = 649.0
+texture = ExtResource("6_seauy")
+expand_mode = 1
+
+[node name="char_image" type="TextureRect" parent="Option_3"]
+layout_mode = 0
+offset_right = 367.0
+offset_bottom = 459.0
+scale = Vector2(0.99508, 0.765091)
+texture = ExtResource("7_be208")
+expand_mode = 1
+
+[node name="name_background" type="TextureRect" parent="Option_3"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+offset_left = -13.0
+offset_top = -17.0
+offset_right = 380.0
+offset_bottom = 40.0
+texture = ExtResource("8_upqyj")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Option_3"]
+layout_mode = 0
+offset_right = 365.0
+offset_bottom = 648.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Option_3/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="health" type="ProgressBar" parent="Option_3/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_styles/fill = ExtResource("3_331nv")
+value = 10.0
+fill_mode = 3
+show_percentage = false
+
+[node name="Label" type="Label" parent="Option_3/VBoxContainer/HBoxContainer/health"]
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 490.0
+theme_override_font_sizes/font_size = 37
+text = "9999/9999"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="center" type="VBoxContainer" parent="Option_3/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Option_3/VBoxContainer/HBoxContainer/center"]
+layout_mode = 2
+text = "homie the horse"
+horizontal_alignment = 1
+
+[node name="char_image" type="Panel" parent="Option_3/VBoxContainer/HBoxContainer/center"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_2xlc3")
+
+[node name="sex_race_class" type="HBoxContainer" parent="Option_3/VBoxContainer/HBoxContainer/center"]
+layout_mode = 2
+
+[node name="sex" type="Label" parent="Option_3/VBoxContainer/HBoxContainer/center/sex_race_class"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "test"
+
+[node name="race" type="Label" parent="Option_3/VBoxContainer/HBoxContainer/center/sex_race_class"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "test"
+
+[node name="class" type="Label" parent="Option_3/VBoxContainer/HBoxContainer/center/sex_race_class"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "test"
+
+[node name="abilities" type="OptionButton" parent="Option_3/VBoxContainer/HBoxContainer/center"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+selected = 0
+item_count = 1
+
+[node name="stats" type="GridContainer" parent="Option_3/VBoxContainer/HBoxContainer/center"]
+layout_mode = 2
+columns = 3
+
+[node name="strg" type="Label" parent="Option_3/VBoxContainer/HBoxContainer/center/stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "test: 10"
+
+[node name="dex" type="Label" parent="Option_3/VBoxContainer/HBoxContainer/center/stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "test: 4"
+
+[node name="intel" type="Label" parent="Option_3/VBoxContainer/HBoxContainer/center/stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "test: 2 "
+
+[node name="ctr" type="Label" parent="Option_3/VBoxContainer/HBoxContainer/center/stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "test: 5"
+
+[node name="spd" type="Label" parent="Option_3/VBoxContainer/HBoxContainer/center/stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "test: 3"
+
+[node name="crd" type="Label" parent="Option_3/VBoxContainer/HBoxContainer/center/stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "test: 2"
+
+[node name="rank_wins_loses" type="HBoxContainer" parent="Option_3/VBoxContainer/HBoxContainer/center"]
+layout_mode = 2
+
+[node name="rank" type="Label" parent="Option_3/VBoxContainer/HBoxContainer/center/rank_wins_loses"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "legendary"
+
+[node name="wins" type="Label" parent="Option_3/VBoxContainer/HBoxContainer/center/rank_wins_loses"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "w:"
+
+[node name="loses" type="Label" parent="Option_3/VBoxContainer/HBoxContainer/center/rank_wins_loses"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "l: "
+
+[node name="resource" type="ProgressBar" parent="Option_3/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_styles/fill = ExtResource("2_wfdsl")
+value = 80.0
+fill_mode = 3
+show_percentage = false
+
+[node name="Label" type="Label" parent="Option_3/VBoxContainer/HBoxContainer/resource"]
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 490.0
+theme_override_font_sizes/font_size = 37
+text = "9999/ 9999"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="bio" type="Label" parent="Option_3/VBoxContainer"]
+custom_minimum_size = Vector2(10, 120)
+layout_mode = 2
+size_flags_vertical = 1
+text = "BIO: "
+
+[node name="Button" type="Button" parent="Option_3/VBoxContainer"]
+layout_mode = 2
+text = "Release from service"

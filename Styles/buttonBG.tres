@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://d0w5kejvtklbp"]
+
+[ext_resource type="Texture2D" uid="uid://jfd45k7sly0g" path="res://Images/buttons/yellow_button.png" id="1_geox8"]
+
+[resource]
+texture = ExtResource("1_geox8")
+expand_margin_left = 35.0
+expand_margin_top = 25.0
+expand_margin_right = 35.0
+expand_margin_bottom = 25.0

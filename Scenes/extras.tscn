@@ -1,0 +1,117 @@
+[gd_scene load_steps=16 format=3 uid="uid://bbcbii0t7hr8n"]
+
+[ext_resource type="Script" path="res://Scripts/extras.gd" id="1_v0l12"]
+[ext_resource type="PackedScene" uid="uid://cfmsupwyokrc0" path="res://Scenes/Icons/dex_dmg.tscn" id="2_x8dar"]
+[ext_resource type="PackedScene" uid="uid://cn6574baf3op5" path="res://Scenes/Icons/strg_icon.tscn" id="3_nw0l8"]
+[ext_resource type="PackedScene" uid="uid://b1irxpgthonyq" path="res://Scenes/Icons/intel_icon.tscn" id="4_0qh0b"]
+[ext_resource type="PackedScene" uid="uid://di62xism056i4" path="res://Scenes/Icons/universal_icon.tscn" id="5_bnsqd"]
+[ext_resource type="PackedScene" uid="uid://bfquomgfflgo5" path="res://Scenes/Icons/crit_icon.tscn" id="6_mgs6d"]
+[ext_resource type="PackedScene" uid="uid://cj44old6vsaah" path="res://Scenes/Icons/flat_stat_decrease_icon.tscn" id="7_laiik"]
+[ext_resource type="PackedScene" uid="uid://dpe25d8nx1hyv" path="res://Scenes/Icons/flat_stat_increase_icon.tscn" id="8_xv3o0"]
+[ext_resource type="PackedScene" uid="uid://b8ju58nwogomc" path="res://Scenes/Icons/percent_stat_decrease_icon.tscn" id="9_3pjv8"]
+[ext_resource type="PackedScene" uid="uid://dj7m2umsdnva" path="res://Scenes/Icons/percent_stat_increase_icon.tscn" id="10_jowae"]
+[ext_resource type="PackedScene" uid="uid://fluvyh3xgev0" path="res://Scenes/Icons/heal_icon.tscn" id="11_6qb1h"]
+[ext_resource type="PackedScene" uid="uid://dbuctwjoncsrd" path="res://Scenes/Icons/resource_removal_s_icon.tscn" id="12_lvv6t"]
+[ext_resource type="PackedScene" uid="uid://c5hxojy0wo58b" path="res://Scenes/Icons/resource_gain_s_icon.tscn" id="13_w8lx6"]
+[ext_resource type="PackedScene" uid="uid://cklerfwsldnls" path="res://Scenes/Icons/resource_removal_m_icon.tscn" id="14_oa6s7"]
+[ext_resource type="PackedScene" uid="uid://b1ebl0lw220i1" path="res://Scenes/Icons/resource_gain_m_icon.tscn" id="15_8fnu0"]
+
+[node name="Control2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v0l12")
+
+[node name="dex_icon" parent="." instance=ExtResource("2_x8dar")]
+layout_mode = 0
+
+[node name="strg_icon" parent="." instance=ExtResource("3_nw0l8")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 67.0
+offset_bottom = 70.0
+
+[node name="intel_icon" parent="." instance=ExtResource("4_0qh0b")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 67.0
+offset_bottom = 70.0
+
+[node name="universal_icon" parent="." instance=ExtResource("5_bnsqd")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 67.0
+offset_bottom = 70.0
+
+[node name="crit_icon" parent="." instance=ExtResource("6_mgs6d")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 67.0
+offset_bottom = 70.0
+
+[node name="flat_stat_decrease_icon" parent="." instance=ExtResource("7_laiik")]
+layout_mode = 0
+offset_top = 0.0
+offset_bottom = 70.0
+
+[node name="flat_stat_increase_icon" parent="." instance=ExtResource("8_xv3o0")]
+layout_mode = 0
+offset_top = 0.0
+offset_bottom = 70.0
+
+[node name="percent_stat_decrease_icon" parent="." instance=ExtResource("9_3pjv8")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 67.0
+offset_bottom = 70.0
+
+[node name="percent_stat_increase_icon" parent="." instance=ExtResource("10_jowae")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 67.0
+offset_bottom = 70.0
+
+[node name="heal_icon" parent="." instance=ExtResource("11_6qb1h")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 67.0
+offset_bottom = 70.0
+
+[node name="resource_removal_s_icon" parent="." instance=ExtResource("12_lvv6t")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 67.0
+offset_bottom = 70.0
+
+[node name="resource_gain_s_icon" parent="." instance=ExtResource("13_w8lx6")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 67.0
+offset_bottom = 70.0
+
+[node name="resource_removal_m_icon" parent="." instance=ExtResource("14_oa6s7")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 67.0
+offset_bottom = 70.0
+
+[node name="resource_gain_m_icon" parent="." instance=ExtResource("15_8fnu0")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 67.0
+offset_bottom = 70.0

@@ -1,0 +1,988 @@
+[gd_scene load_steps=8 format=3 uid="uid://dipvih7p60mwc"]
+
+[ext_resource type="StyleBox" uid="uid://dqwm6u2ammwn5" path="res://Styles/HPbar.tres" id="1_g3vu8"]
+[ext_resource type="StyleBox" uid="uid://d4dl6ccgn2cn" path="res://Styles/MPbar.tres" id="2_lfsyf"]
+[ext_resource type="StyleBox" uid="uid://6wd75487eo1c" path="res://Styles/CharacterBG.tres" id="3_vv30n"]
+[ext_resource type="StyleBox" uid="uid://c1ko2bf53oxoa" path="res://Styles/label_bg.tres" id="4_goyvn"]
+[ext_resource type="Texture2D" uid="uid://cfxn10sxp5fsv" path="res://Images/icon.svg" id="5_2ddcn"]
+[ext_resource type="StyleBox" uid="uid://cqkmtt5d07sya" path="res://Styles/ComboBar.tres" id="6_km026"]
+[ext_resource type="StyleBox" uid="uid://dn402w70oa5dt" path="res://Styles/not_ready.tres" id="7_gmvd5"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ReferenceRect" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1151.0
+offset_bottom = 647.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Team_2_full" type="BoxContainer" parent="ReferenceRect"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ReferenceRect/Team_2_full"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Team_2" type="HBoxContainer" parent="ReferenceRect/Team_2_full/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="team_2_member" type="VBoxContainer" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HP" type="ProgressBar" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("1_g3vu8")
+value = 20.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member/HP"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "256/256"
+
+[node name="MP" type="ProgressBar" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("2_lfsyf")
+value = 80.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member/MP"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "256/256"
+
+[node name="CenterContainer" type="PanelContainer" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_vv30n")
+
+[node name="Name" type="HBoxContainer" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member/CenterContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member/CenterContainer/Name"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/normal = ExtResource("4_goyvn")
+text = "Name:"
+
+[node name="r_name" type="Label" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member/CenterContainer/Name"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/normal = ExtResource("4_goyvn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="Sprite2D" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member/CenterContainer"]
+position = Vector2(62, 88)
+texture = ExtResource("5_2ddcn")
+
+[node name="Turn_order" type="VBoxContainer" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member/CenterContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="Second Turn" type="Label" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member/CenterContainer/Turn_order"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_styles/normal = ExtResource("4_goyvn")
+text = "00"
+
+[node name="Turn" type="HBoxContainer" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member/CenterContainer/Turn_order"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member/CenterContainer/Turn_order/Turn"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_styles/normal = ExtResource("4_goyvn")
+text = "Turn:"
+
+[node name="Label2" type="Label" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member/CenterContainer/Turn_order/Turn"]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_goyvn")
+text = "00"
+
+[node name="Skills" type="OptionButton" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member"]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "Attack"
+popup/item_1/text = "Shield"
+popup/item_1/id = 1
+popup/item_2/text = "Skill Attack"
+popup/item_2/id = 2
+popup/item_3/text = "Magic Attack"
+popup/item_3/id = 3
+
+[node name="Targets" type="OptionButton" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member"]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "Attack"
+popup/item_1/text = "Shield"
+popup/item_1/id = 1
+popup/item_2/text = "Skill Attack"
+popup/item_2/id = 2
+popup/item_3/text = "Magic Attack"
+popup/item_3/id = 3
+
+[node name="team_2_member2" type="VBoxContainer" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HP" type="ProgressBar" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member2"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("1_g3vu8")
+value = 20.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member2/HP"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "256/256"
+
+[node name="MP" type="ProgressBar" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member2"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("2_lfsyf")
+value = 80.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member2/MP"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "256/256"
+
+[node name="CenterContainer" type="PanelContainer" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_vv30n")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member2/CenterContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member2/CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/normal = ExtResource("4_goyvn")
+text = "Name:"
+
+[node name="r_name" type="Label" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member2/CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/normal = ExtResource("4_goyvn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="Sprite2D" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member2/CenterContainer"]
+position = Vector2(67, 98)
+texture = ExtResource("5_2ddcn")
+
+[node name="VBoxContainer" type="OptionButton" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member2"]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "Attack"
+popup/item_1/text = "Shield"
+popup/item_1/id = 1
+popup/item_2/text = "Skill Attack"
+popup/item_2/id = 2
+popup/item_3/text = "Magic Attack"
+popup/item_3/id = 3
+
+[node name="team_2_member3" type="VBoxContainer" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HP" type="ProgressBar" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member3"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("1_g3vu8")
+value = 20.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member3/HP"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "256/256"
+
+[node name="MP" type="ProgressBar" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member3"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("2_lfsyf")
+value = 80.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member3/MP"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "256/256"
+
+[node name="CenterContainer" type="PanelContainer" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member3"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_vv30n")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member3/CenterContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member3/CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/normal = ExtResource("4_goyvn")
+text = "Name:"
+
+[node name="r_name" type="Label" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member3/CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/normal = ExtResource("4_goyvn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="Sprite2D" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member3/CenterContainer"]
+position = Vector2(67, 98)
+texture = ExtResource("5_2ddcn")
+
+[node name="VBoxContainer" type="OptionButton" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member3"]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "Attack"
+popup/item_1/text = "Shield"
+popup/item_1/id = 1
+popup/item_2/text = "Skill Attack"
+popup/item_2/id = 2
+popup/item_3/text = "Magic Attack"
+popup/item_3/id = 3
+
+[node name="team_2_member4" type="VBoxContainer" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HP" type="ProgressBar" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member4"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("1_g3vu8")
+value = 20.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member4/HP"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "256/256"
+
+[node name="MP" type="ProgressBar" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member4"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("2_lfsyf")
+value = 80.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member4/MP"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "256/256"
+
+[node name="CenterContainer" type="PanelContainer" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member4"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_vv30n")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member4/CenterContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member4/CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/normal = ExtResource("4_goyvn")
+text = "Name:"
+
+[node name="r_name" type="Label" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member4/CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/normal = ExtResource("4_goyvn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="Sprite2D" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member4/CenterContainer"]
+position = Vector2(67, 98)
+texture = ExtResource("5_2ddcn")
+
+[node name="VBoxContainer" type="OptionButton" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member4"]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "Attack"
+popup/item_1/text = "Shield"
+popup/item_1/id = 1
+popup/item_2/text = "Skill Attack"
+popup/item_2/id = 2
+popup/item_3/text = "Magic Attack"
+popup/item_3/id = 3
+
+[node name="team_2_member5" type="VBoxContainer" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HP" type="ProgressBar" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member5"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("1_g3vu8")
+value = 20.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member5/HP"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "256/256"
+
+[node name="MP" type="ProgressBar" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member5"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("2_lfsyf")
+value = 80.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member5/MP"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "256/256"
+
+[node name="CenterContainer" type="PanelContainer" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member5"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_vv30n")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member5/CenterContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member5/CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/normal = ExtResource("4_goyvn")
+text = "Name:"
+
+[node name="r_name" type="Label" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member5/CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/normal = ExtResource("4_goyvn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="Sprite2D" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member5/CenterContainer"]
+position = Vector2(67, 98)
+texture = ExtResource("5_2ddcn")
+
+[node name="VBoxContainer" type="OptionButton" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member5"]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "Attack"
+popup/item_1/text = "Shield"
+popup/item_1/id = 1
+popup/item_2/text = "Skill Attack"
+popup/item_2/id = 2
+popup/item_3/text = "Magic Attack"
+popup/item_3/id = 3
+
+[node name="team_2_member6" type="VBoxContainer" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HP" type="ProgressBar" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member6"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("1_g3vu8")
+value = 20.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member6/HP"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "256/256"
+
+[node name="MP" type="ProgressBar" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member6"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("2_lfsyf")
+value = 80.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member6/MP"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "256/256"
+
+[node name="CenterContainer" type="PanelContainer" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member6"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_vv30n")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member6/CenterContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member6/CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/normal = ExtResource("4_goyvn")
+text = "Name:"
+
+[node name="r_name" type="Label" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member6/CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/normal = ExtResource("4_goyvn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="Sprite2D" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member6/CenterContainer"]
+position = Vector2(67, 98)
+texture = ExtResource("5_2ddcn")
+
+[node name="VBoxContainer" type="OptionButton" parent="ReferenceRect/Team_2_full/VBoxContainer/Team_2/team_2_member6"]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "Attack"
+popup/item_1/text = "Shield"
+popup/item_1/id = 1
+popup/item_2/text = "Skill Attack"
+popup/item_2/id = 2
+popup/item_3/text = "Magic Attack"
+popup/item_3/id = 3
+
+[node name="ComboBar" type="ProgressBar" parent="ReferenceRect/Team_2_full/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("6_km026")
+value = 50.0
+
+[node name="Battle Controls" type="HBoxContainer" parent="ReferenceRect"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="ReadyButton" type="Button" parent="ReferenceRect/Battle Controls"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("7_gmvd5")
+text = "Not Ready"
+
+[node name="ReadyButton2" type="Button" parent="ReferenceRect/Battle Controls"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("7_gmvd5")
+text = "Not Ready"
+
+[node name="Team_1_full2" type="BoxContainer" parent="ReferenceRect"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Team_1_full" type="VBoxContainer" parent="ReferenceRect/Team_1_full2"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ComboBar" type="ProgressBar" parent="ReferenceRect/Team_1_full2/Team_1_full"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("6_km026")
+value = 50.0
+
+[node name="Team_1" type="HBoxContainer" parent="ReferenceRect/Team_1_full2/Team_1_full"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="team_1_member" type="VBoxContainer" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Targets" type="OptionButton" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member"]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "Attack"
+popup/item_1/text = "Shield"
+popup/item_1/id = 1
+popup/item_2/text = "Skill Attack"
+popup/item_2/id = 2
+popup/item_3/text = "Magic Attack"
+popup/item_3/id = 3
+
+[node name="Skills" type="OptionButton" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member"]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "Attack"
+popup/item_1/text = "Shield"
+popup/item_1/id = 1
+popup/item_2/text = "Skill Attack"
+popup/item_2/id = 2
+popup/item_3/text = "Magic Attack"
+popup/item_3/id = 3
+
+[node name="CenterContainer" type="PanelContainer" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_vv30n")
+
+[node name="Icon" type="Sprite2D" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member/CenterContainer"]
+position = Vector2(66, 66)
+texture = ExtResource("5_2ddcn")
+
+[node name="Name" type="HBoxContainer" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member/CenterContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member/CenterContainer/Name"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/normal = ExtResource("4_goyvn")
+text = "Name:"
+
+[node name="r_name" type="Label" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member/CenterContainer/Name"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/normal = ExtResource("4_goyvn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Turn_order" type="VBoxContainer" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member/CenterContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="Turn" type="HBoxContainer" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member/CenterContainer/Turn_order"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member/CenterContainer/Turn_order/Turn"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_styles/normal = ExtResource("4_goyvn")
+text = "Turn:"
+
+[node name="Label2" type="Label" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member/CenterContainer/Turn_order/Turn"]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_goyvn")
+text = "00"
+
+[node name="Second Turn" type="Label" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member/CenterContainer/Turn_order"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_styles/normal = ExtResource("4_goyvn")
+text = "00"
+
+[node name="MP" type="ProgressBar" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("2_lfsyf")
+value = 80.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member/MP"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "256/256"
+
+[node name="HP" type="ProgressBar" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("1_g3vu8")
+value = 20.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member/HP"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "256/256"
+
+[node name="team_1_member2" type="VBoxContainer" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="OptionButton" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member2"]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "Attack"
+popup/item_1/text = "Shield"
+popup/item_1/id = 1
+popup/item_2/text = "Skill Attack"
+popup/item_2/id = 2
+popup/item_3/text = "Magic Attack"
+popup/item_3/id = 3
+
+[node name="CenterContainer" type="PanelContainer" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_vv30n")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member2/CenterContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member2/CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/normal = ExtResource("4_goyvn")
+text = "Name:"
+
+[node name="r_name" type="Label" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member2/CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/normal = ExtResource("4_goyvn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="Sprite2D" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member2/CenterContainer"]
+position = Vector2(65, 126)
+texture = ExtResource("5_2ddcn")
+
+[node name="MP" type="ProgressBar" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member2"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("2_lfsyf")
+value = 80.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member2/MP"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "256/256"
+
+[node name="HP" type="ProgressBar" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member2"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("1_g3vu8")
+value = 20.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member2/HP"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "256/256"
+
+[node name="team_1_member3" type="VBoxContainer" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="OptionButton" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member3"]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "Attack"
+popup/item_1/text = "Shield"
+popup/item_1/id = 1
+popup/item_2/text = "Skill Attack"
+popup/item_2/id = 2
+popup/item_3/text = "Magic Attack"
+popup/item_3/id = 3
+
+[node name="CenterContainer" type="PanelContainer" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member3"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_vv30n")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member3/CenterContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member3/CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/normal = ExtResource("4_goyvn")
+text = "Name:"
+
+[node name="r_name" type="Label" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member3/CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/normal = ExtResource("4_goyvn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="Sprite2D" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member3/CenterContainer"]
+position = Vector2(65, 126)
+texture = ExtResource("5_2ddcn")
+
+[node name="MP" type="ProgressBar" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member3"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("2_lfsyf")
+value = 80.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member3/MP"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "256/256"
+
+[node name="HP" type="ProgressBar" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member3"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("1_g3vu8")
+value = 20.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member3/HP"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "256/256"
+
+[node name="team_1_member4" type="VBoxContainer" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="OptionButton" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member4"]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "Attack"
+popup/item_1/text = "Shield"
+popup/item_1/id = 1
+popup/item_2/text = "Skill Attack"
+popup/item_2/id = 2
+popup/item_3/text = "Magic Attack"
+popup/item_3/id = 3
+
+[node name="CenterContainer" type="PanelContainer" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member4"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_vv30n")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member4/CenterContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member4/CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/normal = ExtResource("4_goyvn")
+text = "Name:"
+
+[node name="r_name" type="Label" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member4/CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/normal = ExtResource("4_goyvn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="Sprite2D" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member4/CenterContainer"]
+position = Vector2(65, 126)
+texture = ExtResource("5_2ddcn")
+
+[node name="MP" type="ProgressBar" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member4"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("2_lfsyf")
+value = 80.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member4/MP"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "256/256"
+
+[node name="HP" type="ProgressBar" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member4"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("1_g3vu8")
+value = 20.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member4/HP"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "256/256"
+
+[node name="team_1_member5" type="VBoxContainer" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="OptionButton" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member5"]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "Attack"
+popup/item_1/text = "Shield"
+popup/item_1/id = 1
+popup/item_2/text = "Skill Attack"
+popup/item_2/id = 2
+popup/item_3/text = "Magic Attack"
+popup/item_3/id = 3
+
+[node name="CenterContainer" type="PanelContainer" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member5"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_vv30n")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member5/CenterContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member5/CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/normal = ExtResource("4_goyvn")
+text = "Name:"
+
+[node name="r_name" type="Label" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member5/CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/normal = ExtResource("4_goyvn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="Sprite2D" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member5/CenterContainer"]
+position = Vector2(65, 126)
+texture = ExtResource("5_2ddcn")
+
+[node name="MP" type="ProgressBar" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member5"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("2_lfsyf")
+value = 80.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member5/MP"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "256/256"
+
+[node name="HP" type="ProgressBar" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member5"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("1_g3vu8")
+value = 20.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member5/HP"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "256/256"
+
+[node name="team_1_member6" type="VBoxContainer" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="OptionButton" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member6"]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "Attack"
+popup/item_1/text = "Shield"
+popup/item_1/id = 1
+popup/item_2/text = "Skill Attack"
+popup/item_2/id = 2
+popup/item_3/text = "Magic Attack"
+popup/item_3/id = 3
+
+[node name="CenterContainer" type="PanelContainer" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member6"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_vv30n")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member6/CenterContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member6/CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/normal = ExtResource("4_goyvn")
+text = "Name:"
+
+[node name="r_name" type="Label" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member6/CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/normal = ExtResource("4_goyvn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="Sprite2D" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member6/CenterContainer"]
+position = Vector2(65, 126)
+texture = ExtResource("5_2ddcn")
+
+[node name="MP" type="ProgressBar" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member6"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("2_lfsyf")
+value = 80.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member6/MP"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "256/256"
+
+[node name="HP" type="ProgressBar" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member6"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/fill = ExtResource("1_g3vu8")
+value = 20.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ReferenceRect/Team_1_full2/Team_1_full/Team_1/team_1_member6/HP"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "256/256"
