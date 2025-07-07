@@ -226,7 +226,7 @@ func _ready() -> void:
 var api_key 
 
 func save_api_key():
-	var api_key = "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"
+	var api_key = "testtest"
 	var file = FileAccess.open("user://api_key.data",FileAccess.WRITE)
 	print(api_key)
 	file.store_var(api_key)
